@@ -8,6 +8,9 @@ export const GuideLayout = () => {
         { path: '/guides/vat-explained', title: '부가세 계산 완벽 가이드 (2025)', icon: '📊' },
         { path: '/guides/margin-vs-markup', title: '마진율 vs 마크업: 사장님 필수 상식', icon: '📈' },
         { path: '/guides/2025-salary-table', title: '2025년 연봉 실수령액표 & 세금 공제', icon: '💰' },
+        { path: '/guides/freelance-tax-guide', title: '프리랜서 종합소득세 신고 가이드', icon: '📝' },
+        { path: '/guides/holiday-allowance-guide', title: '주휴수당 지급 기준 & 계산법', icon: '🏖️' },
+        { path: '/guides/taxpayer-type-guide', title: '일반과세자 vs 간이과세자 비교', icon: '⚖️' },
     ];
 
     return (
