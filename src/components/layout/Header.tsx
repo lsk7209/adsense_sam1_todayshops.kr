@@ -18,6 +18,7 @@ export const Header = () => {
           <Link to="/vat-calculator" className="header__link">부가세 계산기</Link>
           <Link to="/margin-calculator" className="header__link">마진 계산기</Link>
           <Link to="/salary-calculator" className="header__link">연봉 계산기</Link>
+          <Link to="/guides/vat-explained" className="header__link">지식 센터</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -47,6 +48,9 @@ export const Header = () => {
           </Link>
           <Link to="/salary-calculator" className="header__mobile-link" onClick={() => setIsMenuOpen(false)}>
             <span className="link-icon">💰</span> 연봉 계산기
+          </Link>
+          <Link to="/guides/vat-explained" className="header__mobile-link" onClick={() => setIsMenuOpen(false)}>
+            <span className="link-icon">📚</span> 비즈니스 지식
           </Link>
 
           <div className="mobile-nav-divider"></div>
