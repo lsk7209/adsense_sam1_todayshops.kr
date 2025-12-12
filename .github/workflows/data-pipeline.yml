@@ -1,0 +1,42 @@
+name: Data Pipeline
+
+on:
+  schedule:
+    # Run at 02:00 UTC every Monday (approx 11:00 KST)
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  data-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 1: Data Ingestion
+      # Note: In a real scenario, you might fetch the source JSON from an API or S3.
+      # Here we assume data/source.json exists or is fetched by a preceding step.
+      - name: Run Data Ingestion
+        run: npx tsx scripts/ingest-data.ts
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      # Step 2: AI Content Generation (Only runs if Ingestion succeeds)
+      - name: Run AI Content Generation
+        if: success()
+        run: npx tsx scripts/generate-content.ts
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

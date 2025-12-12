@@ -1,0 +1,24 @@
+[
+  {
+    "bizesId": "10001",
+    "bizesNm": "Test Store 1",
+    "indsLclsNm": "Food",
+    "indsMclsNm": "Korean Food",
+    "rdnmAdr": "123 Test St, Seoul",
+    "ctprvnNm": "Seoul",
+    "lat": 37.5665,
+    "lon": 126.9780,
+    "otherField": "test data"
+  },
+  {
+    "bizesId": "10002",
+    "bizesNm": "Test Store 2",
+    "indsLclsNm": "Retail",
+    "indsMclsNm": "Clothing",
+    "rdnmAdr": "456 Sample Rd, Busan",
+    "ctprvnNm": "Busan",
+    "lat": 35.1796,
+    "lon": 129.0756,
+    "otherField": "test data 2"
+  }
+]
