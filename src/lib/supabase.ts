@@ -10,13 +10,13 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 // Client for standard interactions (RLS protected)
 export const supabase = createClient(
-    supabaseUrl || '',
-    supabaseAnonKey || ''
+    supabaseUrl || 'https://placeholder.supabase.co',
+    supabaseAnonKey || 'placeholder-key'
 )
 
 // Admin client for server-side batch operations (Bypass RLS)
 // Only use this in server contexts (API routes, Scripts)
 export const supabaseAdmin = createClient(
-    supabaseUrl || '',
-    supabaseServiceKey || supabaseAnonKey || ''
+    supabaseUrl || 'https://placeholder.supabase.co',
+    supabaseServiceKey || supabaseAnonKey || 'placeholder-key'
 )
