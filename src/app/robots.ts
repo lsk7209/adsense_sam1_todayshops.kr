@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/private/', '/admin/'],
         },
-        sitemap: 'https://www.today-shop.com/sitemap.xml', // Replace with actual domain later
+        sitemap: 'https://todayshops.kr/sitemap.xml',
     };
 }

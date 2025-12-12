@@ -31,7 +31,7 @@ export default function AboutPage() {
 
             <div className="bg-gray-50 p-6 rounded-lg border">
                 <p className="text-sm text-gray-500 text-center">
-                    오늘의매장 프로젝트팀 | contact@today-shop.com
+                    오늘의매장 프로젝트팀 | contact@todayshops.kr
                 </p>
             </div>
         </div>
